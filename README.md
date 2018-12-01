@@ -1,7 +1,7 @@
 # canvasringz
 Coding Challenge #003: Lissajous Curve to somethink i seen on the internet
 
-[Demo page](http://github.pages/dexta/canvasringz)
+[Demo page](https://dexta.github.io/canvasringz/frontend/)
 
 # install
 ```bash
