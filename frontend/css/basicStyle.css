@@ -1,0 +1,59 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #DEDEDE;
+}
+
+canvas {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  top:0;
+  left:0;
+}
+
+#menu {
+  position: absolute;
+  z-index: 99;
+  top: 100px;
+  left: 50px;
+}
+
+.btn {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #ee4d2e;
+  color: #FFFFFF;
+  border: none;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.inp {
+  width: 160px;
+  background-color: #ee4d2e;
+  color: #FFFFFF;
+  border-radius: 4px;
+  font-size: 28px;
+  text-align: center;
+  border: 0;
+  outline: 0;
+  padding: 20px;
+  margin: 5px;
+}
+
+.labelz {
+  width: 160px;
+  background-color: #ee4d2e;
+  color: #FFFFFF;
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  padding: 20px;
+  margin: 5px;
+}

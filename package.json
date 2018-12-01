@@ -1,0 +1,27 @@
+{
+  "name": "canvasringz",
+  "version": "0.0.3",
+  "description": "In mathematics, ",
+  "main": "app.js",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dexta/canvasringz.git"
+  },
+  "keywords": [
+    "math",
+    "js",
+    "canvas"
+  ],
+  "author": "dexta.de@gmail.com",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/dexta/canvasringz/issues"
+  },
+  "homepage": "https://github.com/dexta/canvasringz#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}

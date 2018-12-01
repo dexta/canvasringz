@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Canvas Ringz</title>
+  <link rel="stylesheet" href="css/basicStyle.css">
+</head>
+
+<body onload="init()">
+
+<canvas id="gameCanvas"></canvas>
+<div id="menu">
+  <div>
+    <button id="debugButton" class="btn" onclick="debugToggle()">
+      Debug on/off
+    </button>
+  </div>
+  <div>
+    <button class="btn" onclick="numberOfRingzChanged()">
+      Ringz
+    </button>
+  </div>
+  <div>
+    <input id="numberOfRingz" class="inp" onchange="numberOfRingzChanged()" type="number" value="8" min="1">
+  </div>
+</div>
+<script src="js/initstartdraw.js"></script>
+<script src="js/canvasObjects.js"></script>
+<script>
+const debugToggle = () => {
+  SHOWDEBUG = (SHOWDEBUG||false)? false : true;
+};
+
+const numberOfRingzChanged = () => {
+  let newNumber = parseInt(document.querySelector("#numberOfRingz").value);
+  if(!newNumber||false) return;
+  if(newNumber<=0) {
+    document.querySelector("#numberOfRingz").value = 1;
+    newNumber = 1;
+  }
+  MASTERRING.pointsOnRing = newNumber;
+  MASTERRING.setupRingDist();
+};
+
+const setSpeed = (toValue) => {
+  MASTERRING.speed = toValue;
+};
+</script>
+</body>
+</html>
