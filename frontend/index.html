@@ -24,6 +24,10 @@
   <div>
     <input id="numberOfRingz" class="inp" onchange="numberOfRingzChanged()" type="number" value="8" min="1">
   </div>
+  <div>
+    <input id="speedOfRingz" class="inpran" onchange="speedOfRingzChanged()" 
+            type="range" min="1" max="100" value="42" title="change speed of Ringz">
+  </div>
 </div>
 <script src="js/initstartdraw.js"></script>
 <script src="js/canvasObjects.js"></script>
@@ -41,6 +45,22 @@ const numberOfRingzChanged = () => {
   }
   MASTERRING.pointsOnRing = newNumber;
   MASTERRING.setupRingDist();
+};
+
+const speedOfRingzChanged = () => {
+  let speedFac = parseInt(document.querySelector("#speedOfRingz").value);
+  if(!(speedFac||false)) return;
+  if(speedFac>100 || speedFac<0) { 
+    return;
+  } else if(speedFac===1) {
+    speedFac = 0;
+  } else if(speedFac>=95) {
+    speedFac = 100;
+  } else if(speedFac>1&&speedFac<=50) {
+    speedFac = speedFac/(52-speedFac);
+  }
+  let newSpeed = speedFac * -0.004;
+  setSpeed(newSpeed);
 };
 
 const setSpeed = (toValue) => {
