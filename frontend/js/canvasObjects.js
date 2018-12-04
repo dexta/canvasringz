@@ -37,6 +37,8 @@ class staticRing extends canvasObj {
   }
 
   draw(debug) {
+    this.pointOnCX = this.X + this.radius * Math.sin(this.angle);
+    this.pointOnCY = this.Y + this.radius * Math.cos(this.angle);
 
     if(debug||false) {
       // Outline Circle
@@ -59,12 +61,25 @@ class staticRing extends canvasObj {
     // Draw moveing rings
     for(let i=0;i<=this.pointsOnRing;i++) {
       this.allRings[i].setAngle = this.allRings[i].angle + this.speed;
+      this.allRings[i].pointToStartX = this.pointOnCX;
+      this.allRings[i].pointToStartY = this.pointOnCY;
       this.allRings[i].draw(debug);
     }
   }
 
   set setAngle(newAngle) {
     this.angle = newAngle;
+  }
+}
+
+class godRing extends staticRing {
+  constructor(x,y,r) {
+    super(x,y,r);
+    this.setupRingDist();
+  }
+
+  setupRingDist() {
+    this.allRings = new staticRing(100,200,50);
   }
 }
 
